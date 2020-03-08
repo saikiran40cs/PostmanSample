@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "f675482a-7e27-4a69-8e86-4dd25531e6ca",
+		"name": "Places",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Geo ",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e20ffe72-436e-4463-a0b3-f0c825c8de41",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://partners.api.skyscanner.net/apiservices/geo/v1.0?apikey=prtl6749387986743898559646983194",
+					"protocol": "http",
+					"host": [
+						"partners",
+						"api",
+						"skyscanner",
+						"net"
+					],
+					"path": [
+						"apiservices",
+						"geo",
+						"v1.0"
+					],
+					"query": [
+						{
+							"key": "apikey",
+							"value": "prtl6749387986743898559646983194"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autosuggest (list of places)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "db0cec44-714e-498e-be96-ca9044c2a75c",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query=stockholm&apiKey=prtl6749387986743898559646983194",
+					"protocol": "http",
+					"host": [
+						"partners",
+						"api",
+						"skyscanner",
+						"net"
+					],
+					"path": [
+						"apiservices",
+						"autosuggest",
+						"v1.0",
+						"UK",
+						"GBP",
+						"en-GB",
+						""
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "stockholm"
+						},
+						{
+							"key": "apiKey",
+							"value": "prtl6749387986743898559646983194"
+						}
+					]
+				},
+				"description": "use ?query= to get a list of places that match your query string"
+			},
+			"response": []
+		},
+		{
+			"name": "Autosuggest (placeid)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6d55b5fa-a00f-4dda-8d58-80999e6f00a7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 2000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://partners.api.skyscanner.net/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?id=pari&apiKey=prtl6749387986743898559646983194",
+					"protocol": "http",
+					"host": [
+						"partners",
+						"api",
+						"skyscanner",
+						"net"
+					],
+					"path": [
+						"apiservices",
+						"autosuggest",
+						"v1.0",
+						"UK",
+						"GBP",
+						"en-GB",
+						""
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "pari"
+						},
+						{
+							"key": "apiKey",
+							"value": "prtl6749387986743898559646983194"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
